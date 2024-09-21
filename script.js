@@ -38,7 +38,8 @@ function addTimer(hours, minutes, seconds) {
   timerElement.appendChild(timerDisplay);
 
   const stopButton = document.createElement('button');
-  stopButton.textContent = 'Stop Timer';
+  stopButton.textContent = 'Delete';
+  stopButton.className = 'delete-btn';
   stopButton.onclick = () => {
     clearInterval(timer.intervalId);
     timerElement.remove();

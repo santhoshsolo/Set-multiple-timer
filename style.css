@@ -80,9 +80,55 @@ html, body {
     padding: 10px 20px;
     cursor: pointer;
   }
+
   
   #active-timers {
     margin-top: 20px;
-    color: #9b9b9b; /* Grey color for the empty timers text */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .timer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #29293a;
+    border-radius: 15px;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    width: 100%;
+    max-width: 350px;
+    color: white;
+    font-size: 24px;
+    box-sizing: border-box;
+  }
+  
+  .timer-display {
+    flex-grow: 1;
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    text-align: left;
+  }
+  
+  .timer .delete-btn {
+    background-color: #f7e140;
+    border: none;
+    border-radius: 15px;
+    padding: 10px 20px;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .timer .delete-btn:hover {
+    background-color: #d6c435;
+  }
+  
+  
+  .timer-ended {
+    color: red;
   }
   
