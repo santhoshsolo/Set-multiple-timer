@@ -1,4 +1,4 @@
-// Initialize an array to store active timers
+
 let timers = [];
 
 function startTimer(duration, display, timerId) {
@@ -9,15 +9,15 @@ function startTimer(duration, display, timerId) {
     minutes = parseInt((timer % 3600) / 60, 10);
     seconds = parseInt(timer % 60, 10);
 
-    // Update display
+    
     display.textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
 
-    // Check if timer has reached zero
+    
     if (--timer < 0) {
       clearInterval(intervalId);
       display.textContent = "Time's Up!";
       display.classList.add('timer-ended');
-      const audio = new Audio('alert.mp3'); // Add your alert sound here
+      const audio = new Audio('alert.mp3');
       audio.play();
     }
   }, 1000);
@@ -48,7 +48,7 @@ function addTimer(hours, minutes, seconds) {
 
   document.getElementById('active-timers').appendChild(timerElement);
 
-  // Store timer information
+ 
   const timer = {
     duration: timerDuration,
     intervalId: startTimer(timerDuration, timerDisplay, timerId)
@@ -57,19 +57,19 @@ function addTimer(hours, minutes, seconds) {
   timers.push(timer);
 }
 
-// Event listener for 'Set' button
+
 document.getElementById('set-timer-btn').addEventListener('click', () => {
-  // Fetch input values and convert to integers
+ 
   const hours = parseInt(document.getElementById('hours').value) || 0;
   const minutes = parseInt(document.getElementById('minutes').value) || 0;
   const seconds = parseInt(document.getElementById('seconds').value) || 0;
 
-  // Validate input to ensure a valid timer is set
+  
   if (hours === 0 && minutes === 0 && seconds === 0) {
     alert("Please set a valid timer duration");
     return;
   }
 
-  // Add new timer with the provided time
+
   addTimer(hours, minutes, seconds);
 });
